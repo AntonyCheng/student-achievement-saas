@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.issuemodule.mapper.UpdateMapper">
   <resultMap id="BaseResultMap" type="top.sharehome.issuemodule.model.entity.Update">
     <!--@mbg.generated-->
-    <!--@Table wsy_db_issue.t_update-->
+    <!--@Table saas_issue_db.t_update-->
     <id column="update_id" jdbcType="BIGINT" property="id" />
     <result column="update_tenant" jdbcType="BIGINT" property="tenant" />
     <result column="update_account" jdbcType="VARCHAR" property="account" />

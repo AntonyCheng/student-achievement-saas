@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.usermodule.mapper.HonorMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.Honor">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_user.t_honor-->
+        <!--@Table saas_user_db.t_honor-->
         <id column="honor_id" jdbcType="BIGINT" property="id"/>
         <result column="honor_type_id" jdbcType="BIGINT" property="typeId"/>
         <result column="honor_type_name" jdbcType="VARCHAR" property="typeName"/>

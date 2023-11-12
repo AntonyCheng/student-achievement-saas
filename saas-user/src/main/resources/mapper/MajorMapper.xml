@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.usermodule.mapper.MajorMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.Major">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_user.t_major-->
+        <!--@Table saas_user_db.t_major-->
         <id column="major_id" jdbcType="BIGINT" property="id"/>
         <result column="major_name" jdbcType="VARCHAR" property="name"/>
         <result column="major_grade" jdbcType="VARCHAR" property="grade"/>

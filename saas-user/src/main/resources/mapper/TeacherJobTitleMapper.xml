@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.usermodule.mapper.TeacherJobTitleMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.TeacherJobTitle">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_user.t_teacher_job_title-->
+        <!--@Table saas_user_db.t_teacher_job_title-->
         <id column="job_title_id" jdbcType="BIGINT" property="id"/>
         <result column="job_title_name" jdbcType="VARCHAR" property="name"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>

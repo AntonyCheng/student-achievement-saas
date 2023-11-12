@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.usermodule.mapper.TeacherMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.Teacher">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_user.t_teacher-->
+        <!--@Table saas_user_db.t_teacher-->
         <id column="teacher_id" jdbcType="BIGINT" property="id"/>
         <result column="teacher_account" jdbcType="VARCHAR" property="account"/>
         <result column="teacher_password" jdbcType="VARCHAR" property="password"/>

@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.usermodule.mapper.CompetitionTypeMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.CompetitionType">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_user.t_competition_type-->
+        <!--@Table saas_user_db.t_competition_type-->
         <id column="competition_type_id" jdbcType="BIGINT" property="id"/>
         <result column="competition_type_name" jdbcType="VARCHAR" property="name"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>

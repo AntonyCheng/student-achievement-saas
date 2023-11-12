@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.usermodule.mapper.ManagerMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.Manager">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_user.t_manager-->
+        <!--@Table saas_user_db.t_manager-->
         <id column="manager_id" jdbcType="BIGINT" property="id"/>
         <result column="manager_tenant" jdbcType="BIGINT" property="tenant"/>
         <result column="manager_account" jdbcType="VARCHAR" property="account"/>

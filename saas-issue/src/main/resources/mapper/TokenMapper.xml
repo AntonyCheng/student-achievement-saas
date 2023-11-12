@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.issuemodule.mapper.TokenMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.issuemodule.model.entity.Token">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_issue.t_token-->
+        <!--@Table saas_issue_db.t_token-->
         <id column="token_id" jdbcType="BIGINT" property="id"/>
         <result column="token_account" jdbcType="VARCHAR" property="account"/>
         <result column="token_password" jdbcType="VARCHAR" property="password"/>

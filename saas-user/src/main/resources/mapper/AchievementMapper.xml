@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.usermodule.mapper.AchievementMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.Achievement">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_user.t_achievement-->
+        <!--@Table saas_user_db.t_achievement-->
         <id column="achievement_id" jdbcType="BIGINT" property="id"/>
         <result column="achievement_type_id" jdbcType="BIGINT" property="typeId"/>
         <result column="achievement_type_name" jdbcType="VARCHAR" property="typeName"/>

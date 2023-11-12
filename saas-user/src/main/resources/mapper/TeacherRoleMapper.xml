@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.usermodule.mapper.TeacherRoleMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.TeacherRole">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_user.t_teacher_role-->
+        <!--@Table saas_user_db.t_teacher_role-->
         <id column="role_id" jdbcType="BIGINT" property="id"/>
         <result column="role_name" jdbcType="VARCHAR" property="name"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>

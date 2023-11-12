@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.usermodule.mapper.StudentMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.Student">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_user.t_student-->
+        <!--@Table saas_user_db.t_student-->
         <id column="student_id" jdbcType="BIGINT" property="id"/>
         <result column="student_account" jdbcType="VARCHAR" property="account"/>
         <result column="student_password" jdbcType="VARCHAR" property="password"/>

@@ -3,7 +3,7 @@
 <mapper namespace="top.sharehome.issuemodule.mapper.TenantMapper">
     <resultMap id="BaseResultMap" type="top.sharehome.issuemodule.model.entity.Tenant">
         <!--@mbg.generated-->
-        <!--@Table wsy_db_issue.t_tenant-->
+        <!--@Table saas_issue_db.t_tenant-->
         <id column="tenant_id" jdbcType="BIGINT" property="id"/>
         <result column="tenant_account" jdbcType="VARCHAR" property="account"/>
         <result column="tenant_password" jdbcType="VARCHAR" property="password"/>
