@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: 17311111111
+          uri: http://127.0.0.1:40001
+          predicates:
+            - name: TenantId
+              args:
+                tenantId: 1678435122629496834
+        - id: 17322222222
+          uri: http://127.0.0.1:40002
+          predicates:
+            - name: TenantId
+              args:
+                tenantId: 1678435349939802114

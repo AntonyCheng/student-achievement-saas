@@ -1,0 +1,26 @@
+server:
+  port: 28081
+spring:
+  application:
+    name: MailModule
+  rabbitmq:
+    addresses: xxx.xxx.xxx.xxx:25672,xxx.xxx.xxx.xxx:25673,xxx.xxx.xxx.xxx:25674
+    virtual-host: /
+    username: guest
+    password: admin123456
+#    password: guest
+    publisher-returns: true
+    publisher-confirm-type: correlated
+    template:
+      mandatory: true
+    listener:
+      direct:
+        acknowledge-mode: manual
+      simple:
+        acknowledge-mode: manual
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: wushiyuankeji@163.com
+    password: EQDVKYFWPHAIEHKJ
+    from: wushiyuankeji@163.com

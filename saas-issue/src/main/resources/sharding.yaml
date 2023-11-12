@@ -1,0 +1,152 @@
+dataSources:
+  master:
+    dataSourceClassName: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://xxx.xxx.xxx.xxx:23306/wsy_db_issue?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+    username: root
+    password: 123456
+    connectionTimeoutMilliseconds: 30000
+    idleTimeoutMilliseconds: 60000
+    maxLifetimeMilliseconds: 1800000
+    maxPoolSize: 50
+    minPoolSize: 1
+  slave:
+    dataSourceClassName: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://xxx.xxx.xxx.xxx:23307/wsy_db_issue?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+    username: root
+    password: 123456
+    connectionTimeoutMilliseconds: 30000
+    idleTimeoutMilliseconds: 60000
+    maxLifetimeMilliseconds: 1800000
+    maxPoolSize: 50
+    minPoolSize: 1
+props:
+  sql-show: true
+rules:
+  - !READWRITE_SPLITTING
+    dataSources:
+      readwrite_ds:
+        staticStrategy:
+          writeDataSourceName: master
+          readDataSourceNames:
+            - slave
+        loadBalancerName: random
+    loadBalancers:
+      random:
+        type: RANDOM
+  - !ENCRYPT
+    encryptors:
+      aes_encryptor:
+        type: AES
+        props:
+          aes-key-value: ^yrknDV&%@*T56V&
+      assisted_encryptor:
+        type: AES
+        props:
+          aes-key-value: ^yrknDV&%@*T56V&
+      like_encryptor:
+        type: CHAR_DIGEST_LIKE
+    tables:
+      t_token:
+        columns:
+          token_account:
+            cipherColumn: token_account
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_account
+            likeQueryEncryptorName: like_encryptor
+          token_password:
+            cipherColumn: token_password
+            encryptorName: aes_encryptor
+          token_identity:
+            cipherColumn: token_identity
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_identity
+            likeQueryEncryptorName: like_encryptor
+      t_tenant:
+        columns:
+          tenant_account:
+            cipherColumn: tenant_account
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_account
+            likeQueryEncryptorName: like_encryptor
+          tenant_password:
+            cipherColumn: tenant_password
+            encryptorName: aes_encryptor
+          tenant_name:
+            cipherColumn: tenant_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+          tenant_email:
+            cipherColumn: tenant_email
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_email
+            likeQueryEncryptorName: like_encryptor
+          tenant_picture:
+            cipherColumn: tenant_picture
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_picture
+            likeQueryEncryptorName: like_encryptor
+          tenant_school:
+            cipherColumn: tenant_school
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_school
+            likeQueryEncryptorName: like_encryptor
+          tenant_college:
+            cipherColumn: tenant_college
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_college
+            likeQueryEncryptorName: like_encryptor
+          tenant_address:
+            cipherColumn: tenant_address
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_address
+            likeQueryEncryptorName: like_encryptor
+          tenant_coordinate:
+            cipherColumn: tenant_coordinate
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_coordinate
+            likeQueryEncryptorName: like_encryptor
+          tenant_ip:
+            cipherColumn: tenant_ip
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_ip
+            likeQueryEncryptorName: like_encryptor
+          tenant_port:
+            cipherColumn: tenant_port
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_port
+            likeQueryEncryptorName: like_encryptor
+          tenant_db_ip:
+            cipherColumn: tenant_db_ip
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_db_ip
+            likeQueryEncryptorName: like_encryptor
+          tenant_db_port:
+            cipherColumn: tenant_db_port
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_db_port
+            likeQueryEncryptorName: like_encryptor
+      t_update:
+        columns:
+          update_account:
+            cipherColumn: update_account
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_account
+            likeQueryEncryptorName: like_encryptor
+          update_name:
+            cipherColumn: update_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+          update_email:
+            cipherColumn: update_email
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_email
+            likeQueryEncryptorName: like_encryptor
+          update_picture:
+            cipherColumn: update_picture
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_picture
+            likeQueryEncryptorName: like_encryptor

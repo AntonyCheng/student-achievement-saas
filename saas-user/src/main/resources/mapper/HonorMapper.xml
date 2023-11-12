@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.sharehome.usermodule.mapper.HonorMapper">
+    <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.Honor">
+        <!--@mbg.generated-->
+        <!--@Table wsy_db_user.t_honor-->
+        <id column="honor_id" jdbcType="BIGINT" property="id"/>
+        <result column="honor_type_id" jdbcType="BIGINT" property="typeId"/>
+        <result column="honor_type_name" jdbcType="VARCHAR" property="typeName"/>
+        <result column="honor_author_id" jdbcType="BIGINT" property="authorId"/>
+        <result column="honor_author_name" jdbcType="VARCHAR" property="authorName"/>
+        <result column="honor_teacher_id" jdbcType="BIGINT" property="teacherId"/>
+        <result column="honor_teacher_name" jdbcType="VARCHAR" property="teacherName"/>
+        <result column="honor_censor_id" jdbcType="BIGINT" property="censorId"/>
+        <result column="honor_censor_name" jdbcType="VARCHAR" property="censorName"/>
+        <result column="honor_members" jdbcType="VARCHAR" property="members"/>
+        <result column="honor_evidence" jdbcType="VARCHAR" property="evidence"/>
+        <result column="honor_overview" jdbcType="VARCHAR" property="overview"/>
+        <result column="honor_feedback" jdbcType="VARCHAR" property="feedback"/>
+        <result column="honor_status" jdbcType="TINYINT" property="status"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="is_deleted" jdbcType="TINYINT" property="isDeleted"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        honor_id,
+        honor_type_id,
+        honor_type_name,
+        honor_author_id,
+        honor_author_name,
+        honor_teacher_id,
+        honor_teacher_name,
+        honor_censor_id,
+        honor_censor_name,
+        honor_members,
+        honor_evidence,
+        honor_overview,
+        honor_feedback,
+        honor_status,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+</mapper>

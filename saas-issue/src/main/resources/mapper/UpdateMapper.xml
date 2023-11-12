@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.sharehome.issuemodule.mapper.UpdateMapper">
+  <resultMap id="BaseResultMap" type="top.sharehome.issuemodule.model.entity.Update">
+    <!--@mbg.generated-->
+    <!--@Table wsy_db_issue.t_update-->
+    <id column="update_id" jdbcType="BIGINT" property="id" />
+    <result column="update_tenant" jdbcType="BIGINT" property="tenant" />
+    <result column="update_account" jdbcType="VARCHAR" property="account" />
+    <result column="update_name" jdbcType="VARCHAR" property="name" />
+    <result column="update_gender" jdbcType="TINYINT" property="gender" />
+    <result column="update_email" jdbcType="VARCHAR" property="email" />
+    <result column="update_picture" jdbcType="VARCHAR" property="picture" />
+    <result column="update_level" jdbcType="TINYINT" property="level" />
+    <result column="update_status" jdbcType="TINYINT" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  <sql id="Base_Column_List">
+      <!--@mbg.generated-->
+      update_id, update_tenant, update_account, update_name, update_gender, update_email,
+    update_picture, update_level, update_status, create_time, update_time, is_deleted
+  </sql>
+</mapper>

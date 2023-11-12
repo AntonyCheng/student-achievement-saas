@@ -1,0 +1,30 @@
+server:
+  port: 20001
+spring:
+  config:
+    import: nacos:bootstrap.yaml
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin, RETAIN_UNIQUE
+        - AddRequestHeader=ag-request-header, admin_gateway_request_header
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedHeaders: '*'
+            allowedMethods: '*'
+            allowedOrigins: '*'
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  redis:
+    cluster:
+      nodes: xxx.xxx.xxx.xxx:26379,xxx.xxx.xxx.xxx:26380,xxx.xxx.xxx.xxx:26381,xxx.xxx.xxx.xxx:26382,xxx.xxx.xxx.xxx:26383,xxx.xxx.xxx.xxx:26384
+    password: 123456
+    database: 0
+    jedis:
+      pool:
+        max-wait: 10ms
+        max-active: 8
+        max-idle: 8
+        min-idle: 0

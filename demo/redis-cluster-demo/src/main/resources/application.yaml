@@ -1,0 +1,18 @@
+spring:
+  redis:
+    cluster:
+      nodes: xxx.xxx.xxx.xxx:16379,xxx.xxx.xxx.xxx:16380,xxx.xxx.xxx.xxx:16381,xxx.xxx.xxx.xxx:16382,xxx.xxx.xxx.xxx:16383,xxx.xxx.xxx.xxx:16384
+    password: 123456
+    database: 0
+    jedis:
+      pool:
+        max-wait: 10ms
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+  application:
+    name: RedisClusterDemo
+server:
+  port: 8080
+  servlet:
+    context-path: /redis

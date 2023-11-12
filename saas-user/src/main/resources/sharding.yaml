@@ -1,0 +1,306 @@
+dataSources:
+  user:
+    dataSourceClassName: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://xxx.xxx.xxx.xxx:23306/wsy_db_user?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+#    url: jdbc:mysql://xxx.xxx.xxx.xxx:13306/wsy_db_user?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+    username: root
+    password: 123456
+    connectionTimeoutMilliseconds: 30000
+    idleTimeoutMilliseconds: 60000
+    maxLifetimeMilliseconds: 1800000
+    maxPoolSize: 50
+    minPoolSize: 1
+props:
+  sql-show: true
+rules:
+  - !ENCRYPT
+    encryptors:
+      aes_encryptor:
+        type: AES
+        props:
+          aes-key-value: ^yrknDV&%@*T56V&
+      assisted_encryptor:
+        type: AES
+        props:
+          aes-key-value: ^yrknDV&%@*T56V&
+      like_encryptor:
+        type: CHAR_DIGEST_LIKE
+    tables:
+      t_achievement:
+        columns:
+          achievement_type_name:
+            cipherColumn: achievement_type_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_type_name
+            likeQueryEncryptorName: like_encryptor
+          achievement_author_name:
+            cipherColumn: achievement_author_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_author_name
+            likeQueryEncryptorName: like_encryptor
+          achievement_teacher_name:
+            cipherColumn: achievement_teacher_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_teacher_name
+            likeQueryEncryptorName: like_encryptor
+          achievement_censor_name:
+            cipherColumn: achievement_censor_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_censor_name
+            likeQueryEncryptorName: like_encryptor
+          achievement_members:
+            cipherColumn: achievement_members
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_members
+            likeQueryEncryptorName: like_encryptor
+          achievement_evidence:
+            cipherColumn: achievement_evidence
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_evidence
+            likeQueryEncryptorName: like_encryptor
+          achievement_overview:
+            cipherColumn: achievement_overview
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_overview
+            likeQueryEncryptorName: like_encryptor
+          achievement_feedback:
+            cipherColumn: achievement_feedback
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_feedback
+            likeQueryEncryptorName: like_encryptor
+      t_achievement_type:
+        columns:
+          achievement_type_name:
+            cipherColumn: achievement_type_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+      t_competition:
+        columns:
+          competition_type_name:
+            cipherColumn: competition_type_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_type_name
+            likeQueryEncryptorName: like_encryptor
+          competition_author_name:
+            cipherColumn: competition_author_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_author_name
+            likeQueryEncryptorName: like_encryptor
+          competition_teacher_name:
+            cipherColumn: competition_teacher_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_teacher_name
+            likeQueryEncryptorName: like_encryptor
+          competition_censor_name:
+            cipherColumn: competition_censor_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_censor_name
+            likeQueryEncryptorName: like_encryptor
+          competition_members:
+            cipherColumn: competition_members
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_members
+            likeQueryEncryptorName: like_encryptor
+          competition_evidence:
+            cipherColumn: competition_evidence
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_evidence
+            likeQueryEncryptorName: like_encryptor
+          competition_overview:
+            cipherColumn: competition_overview
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_overview
+            likeQueryEncryptorName: like_encryptor
+          competition_feedback:
+            cipherColumn: competition_feedback
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_feedback
+            likeQueryEncryptorName: like_encryptor
+      t_competition_type:
+        columns:
+          competition_type_name:
+            cipherColumn: competition_type_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+      t_honor:
+        columns:
+          honor_type_name:
+            cipherColumn: honor_type_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_type_name
+            likeQueryEncryptorName: like_encryptor
+          honor_author_name:
+            cipherColumn: honor_author_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_author_name
+            likeQueryEncryptorName: like_encryptor
+          honor_teacher_name:
+            cipherColumn: honor_teacher_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_teacher_name
+            likeQueryEncryptorName: like_encryptor
+          honor_censor_name:
+            cipherColumn: honor_censor_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_censor_name
+            likeQueryEncryptorName: like_encryptor
+          honor_members:
+            cipherColumn: honor_members
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_members
+            likeQueryEncryptorName: like_encryptor
+          honor_evidence:
+            cipherColumn: honor_evidence
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_evidence
+            likeQueryEncryptorName: like_encryptor
+          honor_overview:
+            cipherColumn: honor_overview
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_overview
+            likeQueryEncryptorName: like_encryptor
+          honor_feedback:
+            cipherColumn: honor_feedback
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_feedback
+            likeQueryEncryptorName: like_encryptor
+      t_honor_type:
+        columns:
+          honor_type_name:
+            cipherColumn: honor_type_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+      t_major:
+        columns:
+          major_name:
+            cipherColumn: major_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+          major_grade:
+            cipherColumn: major_grade
+            encryptorName: aes_encryptor
+          major_classes:
+            cipherColumn: major_classes
+            encryptorName: aes_encryptor
+      t_manager:
+        columns:
+          manager_account:
+            cipherColumn: manager_account
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_account
+            likeQueryEncryptorName: like_encryptor
+          manager_password:
+            cipherColumn: manager_password
+            encryptorName: aes_encryptor
+          manager_name:
+            cipherColumn: manager_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+          manager_email:
+            cipherColumn: manager_email
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_email
+            likeQueryEncryptorName: like_encryptor
+          manager_picture:
+            cipherColumn: manager_picture
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_picture
+            likeQueryEncryptorName: like_encryptor
+          manager_school:
+            cipherColumn: manager_school
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_school
+            likeQueryEncryptorName: like_encryptor
+          manager_college:
+            cipherColumn: manager_college
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_college
+            likeQueryEncryptorName: like_encryptor
+      t_student:
+        columns:
+          student_account:
+            cipherColumn: student_account
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_account
+            likeQueryEncryptorName: like_encryptor
+          student_password:
+            cipherColumn: student_password
+            encryptorName: aes_encryptor
+          student_name:
+            cipherColumn: student_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+          student_major_name:
+            cipherColumn: student_major_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_major_name
+            likeQueryEncryptorName: like_encryptor
+          student_grade_name:
+            cipherColumn: student_grade_name
+            encryptorName: aes_encryptor
+          student_phone:
+            cipherColumn: student_phone
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_phone
+            likeQueryEncryptorName: like_encryptor
+          student_teacher_name:
+            cipherColumn: student_teacher_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_teacher_name
+            likeQueryEncryptorName: like_encryptor
+          student_pro_teacher_name:
+            cipherColumn: student_pro_teacher_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_pro_teacher_name
+            likeQueryEncryptorName: like_encryptor
+          student_status_description:
+            cipherColumn: student_status_description
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_status_description
+            likeQueryEncryptorName: like_encryptor
+      t_teacher:
+        columns:
+          teacher_account:
+            cipherColumn: teacher_account
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_account
+            likeQueryEncryptorName: like_encryptor
+          teacher_password:
+            cipherColumn: teacher_password
+            encryptorName: aes_encryptor
+          teacher_name:
+            cipherColumn: teacher_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+          teacher_phone:
+            cipherColumn: teacher_phone
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_phone
+            likeQueryEncryptorName: like_encryptor
+          teacher_role_ids:
+            cipherColumn: teacher_role_ids
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_role_ids
+            likeQueryEncryptorName: like_encryptor
+      t_teacher_job_title:
+        columns:
+          job_title_name:
+            cipherColumn: job_title_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor
+      t_teacher_role:
+        columns:
+          role_name:
+            cipherColumn: role_name
+            encryptorName: aes_encryptor
+            likeQueryColumn: like_name
+            likeQueryEncryptorName: like_encryptor

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.sharehome.issuemodule.mapper.TenantMapper">
+    <resultMap id="BaseResultMap" type="top.sharehome.issuemodule.model.entity.Tenant">
+        <!--@mbg.generated-->
+        <!--@Table wsy_db_issue.t_tenant-->
+        <id column="tenant_id" jdbcType="BIGINT" property="id"/>
+        <result column="tenant_account" jdbcType="VARCHAR" property="account"/>
+        <result column="tenant_password" jdbcType="VARCHAR" property="password"/>
+        <result column="tenant_name" jdbcType="VARCHAR" property="name"/>
+        <result column="tenant_gender" jdbcType="TINYINT" property="gender"/>
+        <result column="tenant_email" jdbcType="VARCHAR" property="email"/>
+        <result column="tenant_picture" jdbcType="VARCHAR" property="picture"/>
+        <result column="tenant_school" jdbcType="VARCHAR" property="school"/>
+        <result column="tenant_college" jdbcType="VARCHAR" property="college"/>
+        <result column="tenant_address" jdbcType="VARCHAR" property="address"/>
+        <result column="tenant_coordinate" jdbcType="VARCHAR" property="coordinate"/>
+        <result column="tenant_ip" jdbcType="VARCHAR" property="ip"/>
+        <result column="tenant_port" jdbcType="VARCHAR" property="port"/>
+        <result column="tenant_db_ip" jdbcType="VARCHAR" property="dbIp"/>
+        <result column="tenant_db_port" jdbcType="VARCHAR" property="dbPort"/>
+        <result column="tenant_level" jdbcType="TINYINT" property="level"/>
+        <result column="tenant_status" jdbcType="TINYINT" property="status"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="is_deleted" jdbcType="TINYINT" property="isDeleted"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        tenant_id,
+        tenant_account,
+        tenant_password,
+        tenant_name,
+        tenant_gender,
+        tenant_email,
+        tenant_picture,
+        tenant_school,
+        tenant_college,
+        tenant_address,
+        tenant_coordinate,
+        tenant_ip,
+        tenant_port,
+        tenant_db_ip,
+        tenant_db_port,
+        tenant_level,
+        tenant_status,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+</mapper>

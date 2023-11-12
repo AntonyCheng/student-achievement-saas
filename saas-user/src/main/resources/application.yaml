@@ -1,0 +1,84 @@
+server:
+  port: 18000
+  servlet:
+    context-path: /ug/api
+tid: 1694253382245949442
+spring:
+  application:
+    name: UserModule
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:sharding.yaml
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 60MB
+      file-size-threshold: 1024KB
+      location: D:\SSMLearning\ProSaaS\ProjectDir\UserModule\temp
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  redis:
+    cluster:
+      nodes: xxx.xxx.xxx.xxx:26379,xxx.xxx.xxx.xxx:26380,xxx.xxx.xxx.xxx:26381,xxx.xxx.xxx.xxx:26382,xxx.xxx.xxx.xxx:26383,xxx.xxx.xxx.xxx:26384
+    password: 123456
+    database: 0
+    jedis:
+      pool:
+        max-wait: 10ms
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+  rabbitmq:
+    addresses: xxx.xxx.xxx.xxx:25672,xxx.xxx.xxx.xxx:25673,xxx.xxx.xxx.xxx:25674
+    virtual-host: /
+    username: guest
+    password: admin123456
+#    password: guest
+    publisher-returns: true
+    publisher-confirm-type: correlated
+    template:
+      mandatory: true
+    listener:
+      direct:
+        acknowledge-mode: manual
+      simple:
+        acknowledge-mode: manual
+mybatis-plus:
+  check-config-location: false
+  type-aliases-package: top.sharehome.*.*.entity
+  configuration:
+    map-underscore-to-camel-case: false
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+tencent:
+  cos:
+    file:
+      region: ap-chengdu
+      secret-id: xxx
+      secret-key: xxx
+      bucket-name: xxx
+dubbo:
+  application:
+    name: UserModuleConsumer
+  consumer:
+    check: false
+    timeout: 300000000
+    retries: 0
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://xxx.xxx.xxx.xxx:28848
+    username: nacos
+    password: admin123456

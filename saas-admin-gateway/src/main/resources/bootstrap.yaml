@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: top.sharehome.gateway.admin
+  cloud:
+    nacos:
+      discovery:
+        server-addr: xxx.xxx.xxx.xxx:28848
+        username: nacos
+        password: admin123456
+      config:
+        server-addr: xxx.xxx.xxx.xxx:28848
+        file-extension: yaml
+        username: nacos
+        password: admin123456
+        shared-configs[0]:
+          dataId: top.sharehome.gateway.admin
+          refresh: true

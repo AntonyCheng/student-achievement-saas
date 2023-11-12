@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.sharehome.usermodule.mapper.CompetitionMapper">
+    <resultMap id="BaseResultMap" type="top.sharehome.usermodule.model.entity.Competition">
+        <!--@mbg.generated-->
+        <!--@Table wsy_db_user.t_competition-->
+        <id column="competition_id" jdbcType="BIGINT" property="id"/>
+        <result column="competition_type_id" jdbcType="BIGINT" property="typeId"/>
+        <result column="competition_type_name" jdbcType="VARCHAR" property="typeName"/>
+        <result column="competition_author_id" jdbcType="BIGINT" property="authorId"/>
+        <result column="competition_author_name" jdbcType="VARCHAR" property="authorName"/>
+        <result column="competition_teacher_id" jdbcType="BIGINT" property="teacherId"/>
+        <result column="competition_teacher_name" jdbcType="VARCHAR" property="teacherName"/>
+        <result column="competition_censor_id" jdbcType="BIGINT" property="censorId"/>
+        <result column="competition_censor_name" jdbcType="VARCHAR" property="censorName"/>
+        <result column="competition_members" jdbcType="VARCHAR" property="members"/>
+        <result column="competition_evidence" jdbcType="VARCHAR" property="evidence"/>
+        <result column="competition_overview" jdbcType="VARCHAR" property="overview"/>
+        <result column="competition_feedback" jdbcType="VARCHAR" property="feedback"/>
+        <result column="competition_status" jdbcType="TINYINT" property="status"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="is_deleted" jdbcType="TINYINT" property="isDeleted"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        competition_id,
+        competition_type_id,
+        competition_type_name,
+        competition_author_id,
+        competition_author_name,
+        competition_teacher_id,
+        competition_teacher_name,
+        competition_censor_id,
+        competition_censor_name,
+        competition_members,
+        competition_evidence,
+        competition_overview,
+        competition_feedback,
+        competition_status,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+</mapper>
